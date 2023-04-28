@@ -1,14 +1,107 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-<p>Jon Helge test</p>
-<img src="./img/giphy.gif" alt="oh yeah">
-
+    <main>
+        <article>
+            <h1>Page information</h1>
+            <p>Added some information to the page about adminations for future refrence</p>
+        </article>
+        <article>
+            <h1>Transition</h1>
+            <p>
+                The transition property allows you to change the style of an element smoothly over a specified duration.
+                For
+                example, you can change the background color of a button when a user hovers over it.
+            </p>
+            <h2>Example:</h2>
+            <code>
+            .button {
+                background-color: Blue;
+                transition: Background-color 0.5s ease;
+                }
+                
+            .button:hover {
+                    background-color: green;
+                } 
+            </code>
+        </article>
+        <article>
+            <h1>Keyframes animation</h1>
+            <h2>Example:</h2>
+            <p>
+                Keyframes allow you to define a series of styles that an element should have at certain points in
+                time. You can then use these keyframes to create an animation.
+            </p>
+            <h2>Example:</h2>
+            <code>
+                @keyframes slidein {
+                    from {
+                        transform: translateX(-100%);
+                    }
+                    to {
+                    transform: translateX(0);
+                    }
+                    }
+                    
+                    .slide {
+                        animation: slidein 1s ease;
+                    }
+            </code>
+        </article>
+        <article>
+            <h1>Transform</h1>
+            <p>
+                The transform property allows you to modify the position, size, and shape of an element. You can use
+                transforms to create animations such as scaling, rotating, and skewing.
+            </p>
+            <h2>Example</h2>
+            <code>
+                .box {
+                    transform: scale(1);
+                    transition: transform 0.5s ease;
+                }
+                
+                .box:hover {
+                    transform: scale(1.2);
+                }                
+            </code>
+        </article>
+        <article>
+            <h1>Animation shorthand</h1>
+            <p>
+                - You can use the 'animation' shorthand property to combine multiple animation properties into a single
+                declaration.
+            </p>
+            <h2>Example:</h2>
+            <code>
+                .box {
+                    animation: slidein 1s ease;
+                }
+                
+                @keyframes slidein {
+                    from {
+                        transform: translateX(-100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+                }
+                
+            </code>
+        </article>
+        <article>
+            <h1>Information</h1>
+            <p>
+                These are just a few examples of the different ways you can animate elements using CSS. There are many
+                properties and values you can use to create animations.
+            </p>
+        </article>
+    </main>
 </body>
+
 </html>
