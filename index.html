@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,7 +35,7 @@
                 } 
             </code>
         </pre>
-        <button class="button">Transition</button>
+            <button class="button">Transition</button>
         </article>
         <article>
             <h2>Keyframes animation</h2>
@@ -59,8 +60,8 @@
                     }
             </code>
         </pre>
-        <div class="slide">Keyframes</div>
-        <p class="page">1/2</p>
+            <div class="slide">Keyframes</div>
+            <p class="page">1/3</p>
         </article>
         <div class="seperation"></div>
         <article>
@@ -82,7 +83,7 @@
                 }                
             </code>
         </pre>
-        <div class="box">Transform</div>
+            <div class="box">Transform</div>
         </article>
         <article>
             <h2>Animation shorthand</h2>
@@ -107,7 +108,7 @@
                 }
             </code>
         </pre>
-        <div class="slidein">Shorthand</div>
+            <div class="slidein">Shorthand</div>
         </article>
         <article>
             <h2>Information</h2>
@@ -115,7 +116,95 @@
                 These are just a few examples of the different ways you can animate elements using CSS. There are many
                 properties and values you can use to create animations.
             </p>
-            <p class="page">2/2</p>
+            <p class="page">2/3</p>
+        </article>
+        <div class="seperation"></div>
+        <article>
+            <h2>Animation shorthand</h2>
+            <p>
+                aYou can use the 'animation' shorthand property to combine multiple animation properties into a single
+                declaration.
+            </p>
+            <h2>Example:</h2>
+            <pre>
+            <code>
+                .slidein {
+                    animation: slidein 1s ease;
+                }
+                
+                @keyframes slidein {
+                    from {
+                        transform: translateX(-100%);
+                }
+                to {
+                    transform: translateX(0);
+                }
+                }
+            </code>
+        </pre>
+            <div class="slidein">Shorthand</div>
+        </article>
+        <article>
+            <h2>-Intersection Observer API</h2>
+            <p>
+                This is JavaScript code that uses the Intersection Observer API to toggle a CSS class
+                on and off for each article element when it becomes visible or invisible in the veiwport.
+            </p>
+            <p>Here's what the code does step by step:</p>
+            <ol>
+                <li>
+                    The code selects all article elements on the page using the <b>'querySelectorAll'</b>
+                    method and assigns them to a variable called <b>'articles'</b>.
+                </li>
+                <li>
+                    It creates and empty object called <b>'options'</b>. This object can be used to
+                    configure the observer with additional options, but in this case, no options are set.
+                </li>
+                <li>
+                    It creates a new IntersectionObserver object calles <b>'entries'</b> and the <b>'observer'</b>
+                    object itself. The <b>'entries'</b> array
+                    contains one entry for each observed element that has intersected or stopped intersecting the
+                    veiwportsince the last time the callback was called.
+                </li>
+                <li>
+                    For each entry in the <b>'entries'</b> array, the code checks whenether it is intersecting the
+                    veiwport by checking the
+                    <b>'isIntersecting'</b> property of the entry object. If it is not intersecting, the function simply
+                    returns and does nothing. If it is intersecting,
+                    the function toggles the <b>'visible'</b> class on the <b>'target'</b> property of the entry object,
+                    which refers to the observed element itself.
+                </li>
+                <li>
+                    The code then loops over each article element in the <b>'articles'</b> array and calls the
+                    <b>'observe'</b> method of the <b>'observer'</b> object, passing in the article element as an
+                    argument.
+                    This tells the observer to watch for changes in the visibility of each article element.
+                </li>
+            </ol>
+            <h2>Example:</h2>
+            <pre>
+            <code>
+                const articles = document.querySelectorAll("article");
+                const options = {};
+                const observer = new IntersectionObserver(function 
+                (entries, observer) {
+                  entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                      return;
+                    }    entry.target.classList.toggle("visible");
+                  });
+                }, options);
+                articles.forEach((article) => {
+                  observer.observe(article);
+                });
+            </code>
+        </pre>
+        <p>
+            Overall, this code allows you to create a <i>"lazy loading"</i> effect for your article elements, where they are only loaded and 
+            displayed on the page when they are actually visible in the veiwport. This can improve page load times and 
+            performance by reducing the amount of content that needs to be loaded and rendered at once.
+        </p>
+        <p class="page">3/3</p>
         </article>
     </main>
 </body>
