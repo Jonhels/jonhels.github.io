@@ -1,10 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;   
+    box-sizing: 0;
 }
 
-body, .seperation{
+body,
+.seperation {
     background-color: rgb(235, 233, 233);
 }
 
@@ -15,8 +16,8 @@ main {
     background-color: #fff;
     margin: 40px;
     box-shadow: 2px 2px 5px 1px #8a8d8f3b;
-    
-    
+
+
 }
 
 article {
@@ -28,12 +29,66 @@ p {
     padding: 2% 0;
 }
 
-.seperation{
+.seperation {
     width: 100%;
     height: 5px;
 }
 
-.page{
+.page {
     display: flex;
     justify-content: flex-end;
+}
+
+.button {
+    background-color: red;
+    transition: Background-color 0.5s ease;
+}
+
+.button:hover {
+    background-color: green;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.box,
+.slide,
+.slidein {
+    height: 50px;
+    width: 100px;
+    background-color: red;
+}
+
+.slide {
+    animation: slidein 1s ease infinite;
+}
+
+.box {
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+.box:hover {
+    transform: scale(1.2);
+}
+
+.slidein {
+    animation: slidein 1s ease infinite;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
